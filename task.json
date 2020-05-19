@@ -1,0 +1,42 @@
+{
+  "atomCode": "goDemo",
+  "execution": {
+    "language": "golang",
+    "packagePath": "goDemo",
+    "demands": [
+      "chmod +x goDemo"
+    ],
+    "target": "./goDemo"
+  },
+  "input": {
+    "greeting": {
+      "label": "欢迎词",
+      "default": "Glad to see you",
+      "placeholder": "欢迎词",
+      "type": "vuex-input",
+      "desc": "欢迎词",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "userName": {
+      "label": "姓名",
+      "default": "Mr. Huang",
+      "placeholder": "姓名",
+      "type": "vuex-input",
+      "desc": "姓名",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    }
+  },
+  "output": {
+    "strData_01": {
+      "description": "测试",
+      "type": "string",
+      "isSensitive": false
+    }
+  }
+}
