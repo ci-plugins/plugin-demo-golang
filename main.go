@@ -9,7 +9,10 @@ import (
 
 	"github.com/ci-plugins/golang-plugin-sdk/api"
 	"github.com/ci-plugins/golang-plugin-sdk/log"
+	"github.com/ci-plugins/plugin-demo-golang/translation"
 )
+
+//go:generate i18ngenerator i18n ./translation/translation.go
 
 type greetingParam struct {
 	UserName string `json:"userName"`
@@ -29,6 +32,13 @@ func main() {
 			api.FinishBuild(api.StatusError, "panic occurs")
 		}
 	}()
+
+	api.InitI18n(translation.Translations, api.GetRuntimeLanguage())
+	msg, err := api.Localize("input.desc.label")
+	if err != nil {
+		log.Error(err)
+	}
+	log.Info(msg)
 
 	helloBuild()
 }
